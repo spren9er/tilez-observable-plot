@@ -1,4 +1,4 @@
-# ![Tilez-Logo](https://github.com/spren9er/tilez/blob/main/docs/images/tilez_logo.svg?raw=true) tilez - vega-lite
+# ![Tilez-Logo](https://github.com/spren9er/tilez/blob/main/docs/images/tilez_logo.svg?raw=true) tilez - observable plot
 
 _Observable Plot_ tiles for usage with Svelte layout engine [**_tilez_**](https://github.com/spren9er/tilez).
 
