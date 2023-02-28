@@ -19,6 +19,8 @@ You can use _Observable Plot_ tile for tile types `'html'` and `'svg'`. Componen
 
 ```html
 <script lang="ts">
+  import * as Plot from '@observablehq/plot';
+
   import { Tile } from 'tilez';
   import { ObservablePlotTile } from 'tilez-observable-plot';
 
