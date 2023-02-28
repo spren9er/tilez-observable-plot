@@ -4,7 +4,7 @@
 	// @ts-ignore
 	import * as Plot from '@observablehq/plot';
 
-	export let options: any;
+	export let options: { [key: string]: unknown };
 
 	const { specs, element } = getTileContext();
 
@@ -24,10 +24,8 @@
 			height: $specs.height,
 		});
 
-		if ($element.firstChild) {
-			$element.replaceChildren(plot);
-		} else {
-			$element.appendChild(plot);
-		}
+		$element.firstChild
+			? $element.replaceChildren(plot)
+			: $element.appendChild(plot);
 	}
 </script>

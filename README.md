@@ -1,6 +1,6 @@
 # ![Tilez-Logo](https://github.com/spren9er/tilez/blob/main/docs/images/tilez_logo.svg?raw=true) tilez - observable plot
 
-_Observable Plot_ tiles for usage with Svelte layout engine [**_tilez_**](https://github.com/spren9er/tilez).
+_Observable Plot_ tile for usage with Svelte layout engine [**_tilez_**](https://github.com/spren9er/tilez).
 
 
 ## Installation
@@ -13,7 +13,7 @@ npm install tilez-observable-plot
 
 ## Usage
 
-You can use _Observable Plot_ tiles for tile types `'html'` and `'svg'`. Component **ObservablePlotTile** has following props:
+You can use _Observable Plot_ tile for tile types `'html'` and `'svg'`. Component **ObservablePlotTile** has following props:
 
 - **_options_** _Observable Plot_ specs
 
