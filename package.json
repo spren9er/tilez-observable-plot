@@ -1,6 +1,6 @@
 {
   "name": "tilez-observable-plot",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Torsten Sprenger <mail@spren9er.de>",
   "description": "Observable Plot for Svelte layout engine tilez",
   "keywords": [
@@ -43,23 +43,23 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.8.7",
+    "@sveltejs/kit": "^1.11.0",
     "@sveltejs/package": "^2.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",
-    "publint": "^0.1.9",
-    "svelte-check": "^3.0.4",
+    "publint": "^0.1.10",
+    "svelte-check": "^3.1.0",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5",
     "vite": "^4.1.4"
   },
   "dependencies": {
-    "@observablehq/plot": "^0.6.3",
+    "@observablehq/plot": "^0.6.4",
     "tilez": "^0.0.32"
   },
   "svelte": "./dist/index.js",

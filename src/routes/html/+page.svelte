@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { PageData } from './$types';
+
 	import { Tile, HTile, VTile } from 'tilez';
 
 	// @ts-ignore
@@ -6,38 +8,70 @@
 
 	import ObservablePlotTile from '$lib/components/ObservablePlotTile.svelte';
 
-	const data = [
-		{ a: 'A', b: 28 },
-		{ a: 'B', b: 55 },
-		{ a: 'C', b: 43 },
-		{ a: 'D', b: 91 },
-		{ a: 'E', b: 81 },
-		{ a: 'F', b: 53 },
-		{ a: 'G', b: 19 },
-		{ a: 'H', b: 87 },
-		{ a: 'I', b: 52 },
-	];
+	export let data: PageData;
 
-	const options = {
+	const { barData, scatterData, areaData } = data;
+
+	const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+	const barOptions = {
+		x: {
+			domain: weekdays,
+		},
 		marks: [
-			Plot.barY(data, { x: 'a', y: 'b', fill: 'steelblue' }),
+			Plot.barY(barData, {
+				x: 'weekday',
+				y: 'total',
+				fill: 'steelblue',
+			}),
+			Plot.ruleY([0]),
+		],
+	};
+
+	const scatterOptions = {
+		marks: [
+			Plot.dot(scatterData, { x: 'x', y: 'y', fill: 'steelblue' }),
+			Plot.ruleX([0]),
+			Plot.ruleY([0]),
+		],
+	};
+
+	const areaOptions = {
+		x: {
+			domain: weekdays,
+		},
+		marks: [
+			Plot.areaY(areaData, {
+				x: 'weekday',
+				y: 'total',
+				fill: 'sales',
+			}),
 			Plot.ruleY([0]),
 		],
 	};
 </script>
 
-<HTile type="html" width="800" height="600">
-	<VTile>
-		<Tile height="50%" vAlign="center">
-			<ObservablePlotTile {options} />
-		</Tile>
-	</VTile>
-	<VTile>
-		<Tile>
-			<ObservablePlotTile {options} />
-		</Tile>
-		<Tile>
-			<ObservablePlotTile {options} />
-		</Tile>
-	</VTile>
-</HTile>
+<div style:width="100%" style:height="100vh">
+	<HTile type="html" innerPadding="30px" outerPadding="15px">
+		<VTile>
+			<Tile>
+				<ObservablePlotTile options={barOptions} />
+			</Tile>
+			<Tile>
+				<ObservablePlotTile options={scatterOptions} />
+			</Tile>
+		</VTile>
+		<VTile>
+			<Tile height="50%" vAlign="center">
+				<ObservablePlotTile options={areaOptions} />
+			</Tile>
+		</VTile>
+	</HTile>
+</div>
+
+<style>
+	:global(body) {
+		margin: 0;
+		padding: 0;
+	}
+</style>

@@ -7,7 +7,7 @@ _Observable Plot_ tile for usage with Svelte layout engine [**_tilez_**](https:/
 
 Install **_tilez-observable-plot_** as npm package via
 
-```
+```bash
 npm install tilez-observable-plot
 ```
 
@@ -33,14 +33,14 @@ You can use _Observable Plot_ tile for tile types `'html'` and `'svg'`. Componen
     { a: 'F', b: 53 },
     { a: 'G', b: 19 },
     { a: 'H', b: 87 },
-    { a: 'I', b: 52 },
+    { a: 'I', b: 52 }
   ];
 
   const options = {
     marks: [
       Plot.barY(data, { x: 'a', y: 'b', fill: 'steelblue' }),
       Plot.ruleY([0]),
-    ],
+    ]
   };
 </script>
 
