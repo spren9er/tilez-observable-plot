@@ -3,7 +3,6 @@
 
 	import { Tile, HTile, VTile } from 'tilez';
 
-	// @ts-ignore
 	import * as Plot from '@observablehq/plot';
 
 	import ObservablePlotTile from '$lib/components/ObservablePlotTile.svelte';
@@ -23,6 +22,7 @@
 				x: 'weekday',
 				y: 'total',
 				fill: 'steelblue',
+				tip: true,
 			}),
 			Plot.ruleY([0]),
 		],

@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { getTileContext } from 'tilez';
 
-	// @ts-ignore
 	import * as Plot from '@observablehq/plot';
 
 	export let options: { [key: string]: unknown };
 
 	const { specs, element } = getTileContext();
 
-	let plot: SVGElement;
+	let plot: SVGSVGElement;
 
 	$: if ($specs) {
 		if (!['html', 'svg'].includes($specs.type))
@@ -22,10 +21,8 @@
 			...options,
 			width: $specs.width,
 			height: $specs.height,
-		});
+		}) as SVGSVGElement;
 
-		$element.firstChild
-			? $element.replaceChildren(plot)
-			: $element.appendChild(plot);
+		$element.replaceChildren(plot);
 	}
 </script>
