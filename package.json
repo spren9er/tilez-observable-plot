@@ -1,6 +1,6 @@
 {
   "name": "tilez-observable-plot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Torsten Sprenger <mail@spren9er.de>",
   "description": "Observable Plot for Svelte layout engine tilez",
   "keywords": [
@@ -44,24 +44,24 @@
     "svelte": "^4.1.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.1.0",
-    "@sveltejs/kit": "^1.22.4",
-    "@sveltejs/package": "^2.2.0",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-svelte": "^2.32.4",
-    "prettier": "^3.0.1",
-    "prettier-plugin-svelte": "^3.0.3",
-    "publint": "^0.2.0",
-    "svelte-check": "^3.4.6",
-    "tslib": "^2.6.1",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "@sveltejs/kit": "^2.5.0",
+    "@sveltejs/package": "^2.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.35.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-svelte": "^3.1.2",
+    "publint": "^0.2.7",
+    "svelte-check": "^3.6.3",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12"
   },
   "dependencies": {
-    "tilez": "^0.1.0"
+    "@sveltejs/adapter-static": "^3.0.1",
+    "tilez": "^0.1.1"
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
