@@ -1,6 +1,6 @@
 {
   "name": "tilez-observable-plot",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Torsten Sprenger <mail@spren9er.de>",
   "description": "Observable Plot for Svelte layout engine tilez",
   "keywords": [
