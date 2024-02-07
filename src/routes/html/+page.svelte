@@ -3,7 +3,7 @@
 
 	import { Tile, HTile, VTile } from 'tilez';
 
-	import * as Plot from '@observablehq/plot';
+	import { barY, ruleX, ruleY, dot, areaY } from '@observablehq/plot';
 
 	import ObservablePlotTile from '$lib/components/ObservablePlotTile.svelte';
 
@@ -18,21 +18,21 @@
 			domain: weekdays,
 		},
 		marks: [
-			Plot.barY(barData, {
+			barY(barData, {
 				x: 'weekday',
 				y: 'total',
 				fill: 'steelblue',
 				tip: true,
 			}),
-			Plot.ruleY([0]),
+			ruleY([0]),
 		],
 	};
 
 	const scatterOptions = {
 		marks: [
-			Plot.dot(scatterData, { x: 'x', y: 'y', fill: 'steelblue' }),
-			Plot.ruleX([0]),
-			Plot.ruleY([0]),
+			dot(scatterData, { x: 'x', y: 'y', fill: 'steelblue' }),
+			ruleX([0]),
+			ruleY([0]),
 		],
 	};
 
@@ -41,12 +41,12 @@
 			domain: weekdays,
 		},
 		marks: [
-			Plot.areaY(areaData, {
+			areaY(areaData, {
 				x: 'weekday',
 				y: 'total',
 				fill: 'sales',
 			}),
-			Plot.ruleY([0]),
+			ruleY([0]),
 		],
 	};
 </script>
