@@ -48,3 +48,5 @@ You can use _Observable Plot_ tile for tile types `'html'` and `'svg'`. Componen
   <ObservablePlotTile {options} />
 </Tile>
 ```
+
+**Note:** _Observable Plot_ renders a HTML figure, when legends are involved. If legends are necessary, document type `'html'` should be used.
