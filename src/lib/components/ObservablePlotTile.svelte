@@ -1,28 +1,28 @@
 <script lang="ts">
-	import { getTileContext } from 'tilez';
+  import { getTileContext } from 'tilez';
 
-	import { plot, type PlotOptions } from '@observablehq/plot';
+  import { plot, type PlotOptions } from '@observablehq/plot';
 
-	export let options: PlotOptions;
+  interface Props {
+    options: PlotOptions;
+  }
 
-	const { specs, element } = getTileContext();
+  let { options }: Props = $props();
 
-	let svgPlot: SVGSVGElement;
+  const { specs, element } = getTileContext();
 
-	$: if ($specs) {
-		if (!['html', 'svg'].includes($specs.type))
-			throw new Error(
-				`There is no Observable Plot tile available for type '${$specs.type}'!`,
-			);
-	}
+  // Validation of type
+  const { type } = $specs;
+  if (!['html', 'svg'].includes(type))
+    throw new Error(`No Observable Plot tile available for type '${type}'!`);
 
-	$: if ($element) {
-		svgPlot = plot({
-			...options,
-			width: $specs.width,
-			height: $specs.height,
-		}) as SVGSVGElement;
+  let svgPlot = $derived.by(() => {
+    const { width, height } = $specs;
 
-		$element.replaceChildren(svgPlot);
-	}
+    return plot({ ...options, width, height });
+  });
+
+  $effect(() => {
+    if ($element) $element.replaceChildren(svgPlot);
+  });
 </script>
